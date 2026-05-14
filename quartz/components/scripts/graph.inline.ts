@@ -161,6 +161,14 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       })),
   }
 
+  // Unverlinkte Nodes ausblenden (ausser aktuelle Seite)
+  const linkedIds = new Set<SimpleSlug>()
+  graphData.links.forEach((l) => {
+    linkedIds.add(l.source.id)
+    linkedIds.add(l.target.id)
+  })
+  graphData.nodes = graphData.nodes.filter((n) => linkedIds.has(n.id) || n.id === slug)
+
   const width = graph.offsetWidth
   const height = Math.max(graph.offsetHeight, 250)
 
@@ -169,7 +177,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     .force("charge", forceManyBody().strength(-100 * repelForce))
     .force("center", forceCenter().strength(centerForce))
     .force("link", forceLink(graphData.links).distance(linkDistance))
-    .force("collide", forceCollide<NodeData>((n) => nodeRadius(n)).iterations(3))
+    .force("collide", forceCollide<NodeData>((n) => nodeRadius(n) + 14).iterations(3))
 
   const radius = (Math.min(width, height) / 2) * 0.8
   if (enableRadial) simulation.force("radial", forceRadial(radius).strength(0.2))
@@ -379,7 +387,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       eventMode: "none",
       text: n.text,
       alpha: 0,
-      anchor: { x: 0.5, y: 1.2 },
+      anchor: { x: 0.5, y: 1.6 },
       style: {
         fontSize: fontSize * 15,
         fill: computedStyleMap["--dark"],

@@ -4,7 +4,7 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [Component.PageTitle()],
   afterBody: [],
   footer: Component.Footer({
     links: {
@@ -21,12 +21,11 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    // Component.ArticleTitle(),
+    // Component.ContentMeta(),
+    // Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -41,7 +40,20 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    Component.ConditionalRender({
+      component: Component.Graph({
+        localGraph: { depth: -1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20 },
+        globalGraph: { depth: -1, repelForce: 0.1, centerForce: 1.5, linkDistance: 0.5 },
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.Graph({
+        localGraph: { depth: 1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20 },
+        globalGraph: { depth: 1, repelForce: 1.2, centerForce: 0.8, linkDistance: 15 },
+      }),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -51,7 +63,6 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [

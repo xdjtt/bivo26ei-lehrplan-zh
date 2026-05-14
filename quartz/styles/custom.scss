@@ -1,3 +1,45 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+/* ── Bilder mit Abstand ──────────────────── */
+article img {
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* ── Callouts ─────────────────────────────── */
+/* Icons ausblenden */
+.callout-icon {
+    display: none;
+}
+
+/* Titel bei Note ausblenden */
+.callout[data-callout="note"] .callout-title {
+    display: none;
+}
+
+/* Handlungssituationen – dezentes Blau */
+.callout[data-callout="example"] {
+    --color: rgb(26, 127, 168);
+    --bg: rgba(26, 127, 168, 0.05);
+    border: none;
+    border-left: 3px solid rgba(26, 127, 168, 0.6);
+    box-shadow: none;
+}
+
+/* Kenntnisse – dezentes Grau */
+.callout[data-callout="info"] {
+    --color: rgb(100, 100, 100);
+    --bg: rgba(0, 0, 0, 0.03);
+    border: none;
+    border-left: 3px solid rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+}
+
+/* Hinweise – dezentes Gelb */
+.callout[data-callout="note"] {
+    --color: rgb(180, 140, 0);
+    --bg: rgba(180, 140, 0, 0.05);
+    border: none;
+    border-left: 3px solid rgba(180, 140, 0, 0.4);
+    box-shadow: none;
+}

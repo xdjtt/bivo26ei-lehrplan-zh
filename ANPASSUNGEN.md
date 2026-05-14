@@ -261,6 +261,44 @@ anchor: { x: 0.5, y: 1.6 },
 
 ---
 
+## 6. `quartz/static/svg-lightbox.js` — Subdirectory-Fix
+
+Damit SVG-Links sowohl lokal als auch auf GitHub Pages (Unterverzeichnis wie `xdjtt.github.io/quartz`) funktionieren, wird der Basispfad automatisch aus der Script-URL ausgelesen:
+
+```javascript
+function getSiteBase() {
+  const script = document.querySelector('script[src*="svg-lightbox.js"]')
+  if (!script) return ""
+  const scriptUrl = new URL(script.getAttribute("src"), window.location.href)
+  return scriptUrl.pathname.replace(/\/static\/svg-lightbox\.js$/, "")
+}
+```
+
+SVG-Links mit root-relativem Pfad (`/01_Lehrjahr/...`) werden beim Klick mit dem Basispfad ergänzt:
+- Lokal: Basispfad = `""` → kein Unterschied
+- GitHub Pages: Basispfad = `/quartz` → `/quartz/01_Lehrjahr/...`
+
+SVG-Links müssen mit `/` beginnen (root-relativ), z.B.:
+```xml
+<a href="/01_Lehrjahr/AS1_Baustelle-einrichten,-PSA" target="_blank">
+```
+Quartz wandelt Leerzeichen in Dateinamen in `-` um.
+
+## 7. `quartz/components/Head.tsx` — Lightbox-Pfad-Fix *(Core-Datei)*
+
+Der absolute Pfad `/static/lightbox.js` wurde auf einen relativen Pfad geändert, damit er auf GitHub Pages in Unterverzeichnissen funktioniert:
+
+**Original:**
+```tsx
+<script src="/static/lightbox.js" defer></script>
+```
+**Geändert zu:**
+```tsx
+<script src={`${baseDir}/static/lightbox.js`} defer></script>
+```
+
+---
+
 ## Wiederherstellung nach Quartz-Update
 
 1. `quartz/styles/custom.scss` — Inhalt aus Abschnitt 1 einfügen

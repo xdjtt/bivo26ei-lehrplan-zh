@@ -1,6 +1,13 @@
+function getSiteBase() {
+  const script = document.querySelector('script[src*="svg-lightbox.js"]')
+  if (!script) return ""
+  const scriptUrl = new URL(script.getAttribute("src"), window.location.href)
+  return scriptUrl.pathname.replace(/\/static\/svg-lightbox\.js$/, "")
+}
+
 function setupSvgLightbox() {
   const svgImages = document.querySelectorAll('img[src$=".svg"]')
-  
+
   svgImages.forEach(img => {
     if (img.dataset.svgLightbox) return
     img.dataset.svgLightbox = "true"
@@ -9,7 +16,7 @@ function setupSvgLightbox() {
     img.addEventListener("click", async () => {
       const response = await fetch(img.src)
       const svgText = await response.text()
-      
+
       const overlay = document.createElement("div")
       overlay.style.cssText = `
         position: fixed; inset: 0;
@@ -29,11 +36,19 @@ function setupSvgLightbox() {
 
       overlay.addEventListener("click", () => overlay.remove())
 
+      const siteBase = getSiteBase()
       overlay.querySelectorAll("a").forEach(link => {
         link.style.cursor = "pointer"
-        link.addEventListener("click", (e) => e.stopPropagation())
+        link.addEventListener("click", (e) => {
+          e.stopPropagation()
+          const href = link.getAttribute("href")
+          if (href && href.startsWith("/")) {
+            e.preventDefault()
+            window.open(siteBase + href, "_blank")
+          }
+        })
       })
-      
+
       document.body.appendChild(overlay)
     })
   })

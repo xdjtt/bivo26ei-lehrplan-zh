@@ -1,0 +1,71 @@
+// ALTERNATIVE VERSION – SVG öffnet in neuem Tab (Stand Mai 2026)
+//
+// Diese Version ist voll funktionsfähig und kann jederzeit als
+// Ersatz für svg-lightbox.js eingesetzt werden.
+//
+// Verhalten:
+// - Klick auf SVG-Bild → neuer Browser-Tab öffnet sich
+// - SVG erscheint zentriert auf grauem Hintergrund (#d0d0d0)
+// - Block-Links (AS1, ID3 etc.) navigieren im neuen Tab direkt zur Seite
+// - Kein Overlay, kein iframe — technisch einfachste Lösung
+// - Browser-Zoom (Ctrl+Scroll) funktioniert isoliert im neuen Tab
+//
+// Zum Aktivieren: Inhalt dieser Datei in svg-lightbox.js kopieren
+// (aktuelle svg-lightbox.js vorher sichern)
+
+function getSiteBase() {
+  const script = document.querySelector('script[src*="svg-lightbox.js"]')
+  if (!script) return ""
+  const scriptUrl = new URL(script.getAttribute("src"), window.location.href)
+  return scriptUrl.pathname.replace(/\/static\/svg-lightbox\.js$/, "")
+}
+
+function setupSvgLightbox() {
+  document.querySelectorAll('img[src$=".svg"]').forEach(img => {
+    if (img.dataset.svgLightbox) return
+    img.dataset.svgLightbox = "true"
+    img.style.cursor = "zoom-in"
+
+    img.addEventListener("click", async () => {
+      const siteBase = getSiteBase()
+      const origin = window.location.origin
+
+      const response = await fetch(img.src)
+      let svgText = await response.text()
+
+      // Relative hrefs (../path) → absolute so they work from blob URL context
+      svgText = svgText.replace(/href="\.\.\/([^"]+)"/g, `href="${origin}${siteBase}/$1"`)
+
+      const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; background: #d0d0d0; display: flex; justify-content: center; align-items: center; }
+  svg { max-width: 95vw; max-height: 95vh; }
+  a { cursor: pointer; }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault()
+        const href = link.getAttribute("href")
+        if (href) window.location.href = href
+      })
+    })
+  })
+<\/script>
+</head>
+<body>${svgText}</body>
+</html>`
+
+      const blob = new Blob([html], { type: "text/html" })
+      window.open(URL.createObjectURL(blob), "_blank")
+    })
+  })
+}
+
+document.addEventListener("DOMContentLoaded", () => { setupSvgLightbox() })
+document.addEventListener("nav", () => { setupSvgLightbox() })

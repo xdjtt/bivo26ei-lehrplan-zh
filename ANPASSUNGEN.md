@@ -152,12 +152,22 @@ function createOverlay() {
 
 ## ✅ 4. `quartz/static/svg-lightbox.js` — Lightbox für SVG-Bilder
 
-**Was:** Klick auf ein SVG-Bild öffnet die SVG in einem neuen Tab, zentriert in einer HTML-Seite. Interne Links (AS1, ID3 etc.) navigieren im selben Tab zur entsprechenden Seite.
+**Was:** Klick auf ein SVG-Bild öffnet die SVG als Overlay im gleichen Tab (kein neuer Tab). Die SVG wird in einem iframe mit eigenem CSS-Kontext angezeigt — Quartz-CSS beeinflusst die Darstellung nicht.
+
+**Verhalten:**
+- Overlay mit grauem Hintergrund (#d0d0d0), SVG zentriert
+- Lupe-minus-Cursor überall ausserhalb der Links
+- Schliessen: Klick irgendwo (ausser auf Link), Escape-Taste, × oben rechts
+- Block-Links (AS1, ID3 etc.) navigieren die Hauptseite direkt zur Seite
 
 **Technischer Hintergrund:**
-- Die SVG wird per `fetch` geladen und als Inline-SVG in eine HTML-Seite eingebettet
-- Relative Pfade (`../01_Lehrjahr/...`) werden zu absoluten URLs umgeschrieben, damit sie vom Blob-URL-Kontext aus funktionieren
-- `getSiteBase()` liest den Basispfad aus der Script-URL → funktioniert auch bei GitHub Pages mit Unterordner-Deployment (z.B. `user.github.io/repo/`)
+- SVG wird per `fetch` geladen, relative Pfade zu absoluten URLs umgeschrieben
+- iframe isoliert die SVG vom Quartz-CSS (verhindert Textüberlauf-Problem)
+- Kommunikation iframe ↔ Hauptseite via `postMessage` (für Schliessen und Navigation)
+- SVG `<a>`-Elemente: `link.getAttribute("href")` statt `link.href` (SVG gibt kein String zurück)
+- Escape wird auf beiden Ebenen abgefangen (iframe + Hauptseite)
+
+**Alternative Version:** `quartz/static/svg-lightbox.js.backup` — öffnet SVG in neuem Tab statt Overlay. Voll funktionsfähig, technisch einfacher. Zum Aktivieren: Inhalt in `svg-lightbox.js` kopieren.
 
 ```javascript
 function getSiteBase() {
@@ -180,7 +190,7 @@ function setupSvgLightbox() {
       const response = await fetch(img.src)
       let svgText = await response.text()
 
-      // Relative hrefs (../pfad) → absolute URLs für Blob-URL-Kontext
+      // Relative hrefs (../path) → absolute für iframe-Kontext
       svgText = svgText.replace(/href="\.\.\/([^"]+)"/g, `href="${origin}${siteBase}/$1"`)
 
       const html = `<!DOCTYPE html>
@@ -190,16 +200,81 @@ function setupSvgLightbox() {
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 100%; height: 100%; background: #d0d0d0;
-               display: flex; justify-content: center; align-items: center; }
-  svg { max-width: 95vw; max-height: 95vh; }
+               display: flex; justify-content: center; align-items: center;
+               cursor: zoom-out; }
+  svg { max-width: 100%; max-height: 100%; cursor: zoom-out; }
   a { cursor: pointer; }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        const href = link.getAttribute("href")
+        if (href) window.top.postMessage({ type: "svg-navigate", href }, "*")
+      })
+    })
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") window.top.postMessage({ type: "svg-close" }, "*")
+    })
+    document.body.addEventListener("click", () => {
+      window.top.postMessage({ type: "svg-close" }, "*")
+    })
+  })
+<\/script>
 </head>
 <body>${svgText}</body>
 </html>`
 
       const blob = new Blob([html], { type: "text/html" })
-      window.open(URL.createObjectURL(blob), "_blank")
+      const blobUrl = URL.createObjectURL(blob)
+
+      const overlay = document.createElement("div")
+      overlay.style.cssText = `
+        position: fixed; inset: 0; background: #d0d0d0;
+        display: flex; align-items: center; justify-content: center;
+        z-index: 9999; cursor: zoom-out;
+      `
+
+      const iframe = document.createElement("iframe")
+      iframe.style.cssText = "width: 95vw; height: 95vh; border: none;"
+      iframe.src = blobUrl
+      overlay.appendChild(iframe)
+
+      const close = () => {
+        overlay.remove()
+        URL.revokeObjectURL(blobUrl)
+        window.removeEventListener("message", onMessage)
+        document.removeEventListener("keydown", onKeyDown)
+      }
+
+      const onKeyDown = (e) => { if (e.key === "Escape") close() }
+      document.addEventListener("keydown", onKeyDown)
+
+      const onMessage = (e) => {
+        if (e.data?.type === "svg-close") {
+          close()
+        } else if (e.data?.type === "svg-navigate") {
+          close()
+          window.location.href = e.data.href
+        }
+      }
+      window.addEventListener("message", onMessage)
+
+      overlay.addEventListener("click", (e) => { if (e.target === overlay) close() })
+
+      const closeBtn = document.createElement("button")
+      closeBtn.textContent = "×"
+      closeBtn.style.cssText = `
+        position: absolute; top: 1rem; right: 1.5rem;
+        background: none; border: none; font-size: 2rem;
+        cursor: pointer; color: #444; line-height: 1;
+      `
+      closeBtn.addEventListener("click", close)
+      overlay.appendChild(closeBtn)
+
+      document.body.appendChild(overlay)
     })
   })
 }

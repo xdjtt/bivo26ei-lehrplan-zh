@@ -177,7 +177,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     .force("charge", forceManyBody().strength(-100 * repelForce))
     .force("center", forceCenter().strength(centerForce))
     .force("link", forceLink(graphData.links).distance(linkDistance))
-    .force("collide", forceCollide<NodeData>((n) => nodeRadius(n) + 14).iterations(3))
+    .force("collide", forceCollide<NodeData>((n) => nodeRadius(n) + 55).iterations(5))
 
   const radius = (Math.min(width, height) / 2) * 0.8
   if (enableRadial) simulation.force("radial", forceRadial(radius).strength(0.2))
@@ -214,10 +214,10 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   }
 
   function nodeRadius(d: NodeData) {
-    const numLinks = graphData.links.filter(
-      (l) => l.source.id === d.id || l.target.id === d.id,
+    const numIncoming = graphData.links.filter(
+      (l) => l.target.id === d.id,
     ).length
-    return 2 + Math.sqrt(numLinks)
+    return 2 + Math.sqrt(numIncoming) * 4
   }
 
   let hoveredNodeId: string | null = null
@@ -392,6 +392,9 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
         fontSize: fontSize * 15,
         fill: computedStyleMap["--dark"],
         fontFamily: computedStyleMap["--bodyFont"],
+        wordWrap: true,
+        wordWrapWidth: 120,
+        align: "center",
       },
       resolution: window.devicePixelRatio * 4,
     })

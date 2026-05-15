@@ -42,15 +42,15 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.ConditionalRender({
       component: Component.Graph({
-        localGraph: { depth: -1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20 },
-        globalGraph: { depth: -1, repelForce: 0.1, centerForce: 1.5, linkDistance: 0.5 },
+        localGraph: { depth: -1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20, removeTags: ["todo"] },
+        globalGraph: { depth: -1, repelForce: 8, centerForce: 0.7, linkDistance: 170, opacityScale: 3, removeTags: ["todo"] },
       }),
       condition: (page) => page.fileData.slug === "index",
     }),
     Component.ConditionalRender({
       component: Component.Graph({
-        localGraph: { depth: 1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20 },
-        globalGraph: { depth: 1, repelForce: 1.2, centerForce: 0.8, linkDistance: 15 },
+        localGraph: { depth: 1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20, removeTags: ["todo"] },
+        globalGraph: { depth: 1, repelForce: 8, centerForce: 0.7, linkDistance: 170, opacityScale: 3, removeTags: ["todo"] },
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),

@@ -12,9 +12,16 @@ article img {
     display: none;
 }
 
-/* Titel bei Note ausblenden */
-.callout[data-callout="note"] .callout-title {
+/* Titel bei Note und Info standardmässig ausblenden */
+.callout[data-callout="note"] .callout-title,
+.callout[data-callout="info"] .callout-title {
     display: none;
+}
+
+/* Titel einblenden mit: > [!info|titel] Mein Titel */
+.callout[data-callout="note"][data-callout-metadata~="titel"] .callout-title,
+.callout[data-callout="info"][data-callout-metadata~="titel"] .callout-title {
+    display: flex;
 }
 
 /* Handlungssituationen – dezentes Blau */

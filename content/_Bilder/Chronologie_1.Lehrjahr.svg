@@ -23,42 +23,618 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0117163"
-     inkscape:cx="324.69577"
-     inkscape:cy="317.77683"
+     inkscape:zoom="0.50585815"
+     inkscape:cx="394.37933"
+     inkscape:cy="188.7881"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
      inkscape:window-y="112"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1" />
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="3.7795276"
+       spacingy="3.7795276"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
   <defs
-     id="defs1" />
+     id="defs1">
+    <rect
+       x="75.59055"
+       y="37.795276"
+       width="188.97638"
+       height="113.38583"
+       id="rect1" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="188.97638"
+       height="113.38583"
+       id="rect1-8" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="188.97638"
+       height="113.38583"
+       id="rect1-1" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="188.97638"
+       height="113.38583"
+       id="rect1-5" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="188.97638"
+       height="113.38583"
+       id="rect1-3" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808529"
+       id="rect1-9" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-9" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-3" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-8" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-5" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-7" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-77" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-80" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-6" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-778" />
+    <rect
+       x="75.590553"
+       y="37.795277"
+       width="165.05702"
+       height="93.808533"
+       id="rect1-9-34" />
+  </defs>
   <g
-     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Hintergrund">
+    <rect
+       style="opacity:0.5;fill:#ff0000;stroke:#000000;stroke-width:1.51181"
+       id="rect15"
+       width="869.29132"
+       height="149.6693"
+       x="18.897659"
+       y="38.551182"
+       ry="0" />
+    <rect
+       style="opacity:0.5;fill:#008000;stroke:#000000;stroke-width:1.51181"
+       id="rect16"
+       width="1077.1654"
+       height="150.4252"
+       x="18.897638"
+       y="208.62994" />
+    <g
+       id="g17"
+       inkscape:label="Beschriftung">
+      <text
+         xml:space="preserve"
+         style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-decoration-color:#000000;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+         x="56.903374"
+         y="56.708969"
+         id="text16"><tspan
+           sodipodi:role="line"
+           id="tspan16"
+           x="56.903374"
+           y="56.708969">AS: Arbeitssicherheit, Abfälle, Gefahrenstoffe und Entsorgung (35 Lektionen) </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-decoration-color:#000000;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+         x="56.692913"
+         y="226.77167"
+         id="text17"><tspan
+           sodipodi:role="line"
+           id="tspan17"
+           x="56.692913"
+           y="226.77167">ID: Installieren und dokumentieren (45 Lektionen) </tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:label="Verlinkung"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g1">
-      <a href="/01_Lehrjahr/AS1_Baustelle-einrichten,-PSA" target="_blank">
+    <a
+       href="../01_Lehrjahr/AS1_Baustelle-einrichten,-PSA"
+       id="link-as1">
+      <g
+         id="g5-50"
+         inkscape:label="AS1"
+         transform="translate(-13.460806,-42.944212)">
         <rect
-           style="fill:#ffffff;stroke:#ff0000;stroke-width:1.51181"
-           id="rect1"
-           width="264.09647"
-           height="96.865105"
-           x="176.92708"
-           y="115.64507" />
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
         <text
            xml:space="preserve"
-           style="font-size:9.33333px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-decoration-color:#000000;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
-           x="243.15118"
-           y="165.06604"
-           id="text1"><tspan
-             sodipodi:role="line"
-             id="tspan1"
-             x="243.15118"
-             y="165.06604">AS1</tspan></text>
-      </a>
+           id="text1-86"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="110.01193"
+             y="51.761876"
+             id="tspan2">AS1_Baustelle </tspan><tspan
+             x="107.57345"
+             y="70.09525"
+             id="tspan3">einrichten, PSA
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan5">
+</tspan><tspan
+             x="120.19913"
+             y="106.762"
+             id="tspan18"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan8">8 Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/AS2_Abfälle-und-Gefahrenstoffe"
+       id="link-as2">
+      <g
+         id="g5-50-3"
+         inkscape:label="AS2"
+         transform="translate(194.41321,-42.944212)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-5"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-9"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-77);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="103.48425"
+             y="51.761876"
+             id="tspan48"><tspan
+               style="stroke:#000000"
+               id="tspan47">AS2_Abfälle und </tspan></tspan><tspan
+             x="109.7398"
+             y="70.09525"
+             id="tspan50"><tspan
+   style="stroke:#000000"
+   id="tspan49">Gefahrenstoffe</tspan>
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan51">
+</tspan><tspan
+             x="114.08323"
+             y="106.762"
+             id="tspan53"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan52"> 10 Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/AS3_Umgang-mit-Elektrizität"
+       id="link-as3">
+      <g
+         id="g5-50-5"
+         inkscape:label="AS3"
+         transform="translate(402.28723,-42.944212)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-0"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-94"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-80);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="96.569846"
+             y="51.761876"
+             id="tspan55"><tspan
+               style="stroke:#000000"
+               id="tspan54">AS3_Umgnang mit </tspan></tspan><tspan
+             x="122.25806"
+             y="70.09525"
+             id="tspan57"><tspan
+   style="stroke:#000000"
+   id="tspan56">Elektrizität</tspan>
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan58">
+</tspan><tspan
+             x="116.12067"
+             y="106.762"
+             id="tspan61"><tspan
+   style="fill:#ff0000;stroke:#ff0000"
+   id="tspan59">10</tspan> <tspan
+   style="fill:#ff0000;stroke:#ff0000"
+   id="tspan60">Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/AS4_PSA-(Elektro)"
+       id="link-as4">
+      <g
+         id="g5-50-61"
+         inkscape:label="AS4"
+         transform="translate(610.16125,-42.944212)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-8"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-98"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-6);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="123.87297"
+             y="51.761876"
+             id="tspan63"><tspan
+               style="stroke:#000000"
+               id="tspan62">AS4_PSA
+</tspan></tspan><tspan
+             x="130.41139"
+             y="70.09525"
+             id="tspan65"><tspan
+   style="stroke:#000000"
+   id="tspan64">(Elektro)</tspan>
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan66">
+</tspan><tspan
+             x="120.19913"
+             y="106.762"
+             id="tspan68"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan67">7 Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/ID1_Lampenschaltung-im-Kellerraum"
+       id="link-id1">
+      <g
+         id="g5-50-6"
+         inkscape:label="ID1"
+         transform="translate(-14.216697,127.13454)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-1"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-3"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-9);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="76.578589"
+             y="51.761876"
+             id="tspan19">ID1_Lampenschaltungen </tspan><tspan
+             x="110.84983"
+             y="70.09525"
+             id="tspan20">im Kellerraum
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan21">
+</tspan><tspan
+             x="116.66494"
+             y="106.762"
+             id="tspan23"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan22">11 Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/ID2_Verlegen-eines-Erders"
+       id="link-id2">
+      <g
+         id="g5-50-60"
+         inkscape:label="ID2"
+         transform="translate(193.65732,127.13454)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-6"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-6"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-3);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="94.109879"
+             y="51.761876"
+             id="tspan24">ID2_Verlegen eines </tspan><tspan
+             x="134.48269"
+             y="70.09525"
+             id="tspan25">Erders
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan26">
+</tspan><tspan
+             x="120.19913"
+             y="106.762"
+             id="tspan29"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan27">7</tspan><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan28"> Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/ID3_Potenzialausgleich"
+       id="link-id3">
+      <g
+         id="g5-50-9"
+         inkscape:label="ID3"
+         transform="translate(402.28723,127.13454)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-13"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-5"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-8);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="81.477037"
+             y="51.761876"
+             id="tspan30">ID3_Potenzialausgleich
+</tspan><tspan
+             x="158.11914"
+             y="70.09525"
+             id="tspan31">
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan32">
+</tspan><tspan
+             x="120.19913"
+             y="106.762"
+             id="tspan35"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan33">7</tspan><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan34"> Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/ID4_EFH_Treppenhaus-UG_EG"
+       id="link-id4">
+      <g
+         id="g5-50-0"
+         inkscape:label="ID4"
+         transform="translate(610.16125,127.13454)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-9"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-7"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-5);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="80.939927"
+             y="51.761876"
+             id="tspan36">ID4_EFH_Treppenhaus </tspan><tspan
+             x="132.44525"
+             y="70.09525"
+             id="tspan37">UG_EG
+</tspan><tspan
+             x="158.11914"
+             y="88.428625"
+             id="tspan38">
+</tspan><tspan
+             x="120.19913"
+             y="106.762"
+             id="tspan41"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan39">9</tspan><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan40"> Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <a
+       href="../01_Lehrjahr/ID5_Einphasige-Beleuchtungsinstallationen-im-Wohnbereich"
+       id="link-id5">
+      <g
+         id="g5-50-1"
+         inkscape:label="ID5"
+         transform="translate(818.03527,127.13454)">
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+           id="rect5-2-2"
+           width="170.83464"
+           height="95.244087"
+           x="70.15374"
+           y="117.77886" />
+        <text
+           xml:space="preserve"
+           id="text1-86-0"
+           style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-7);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+           x="56.941406"
+           y="0"
+           transform="translate(-2.5373338,91.38833)"><tspan
+             x="106.34168"
+             y="51.761876"
+             id="tspan42">ID5_Einphasige </tspan><tspan
+             x="79.027813"
+             y="70.09525"
+             id="tspan43">Beleuchtungsinstallation</tspan><tspan
+             x="95.073097"
+             y="88.428625"
+             id="tspan44">en im Wohnbereich
+</tspan><tspan
+             x="116.12067"
+             y="106.762"
+             id="tspan46"><tspan
+               style="fill:#ff0000;stroke:#ff0000"
+               id="tspan45">10 Lektionen</tspan></tspan></text>
+      </g>
+    </a>
+    <g
+       id="g5-50-37"
+       inkscape:label="KT1"
+       transform="translate(610.16125,297.21328)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+         id="rect5-2-10"
+         width="170.83464"
+         height="95.244087"
+         x="70.15374"
+         y="117.77886" />
+      <text
+         xml:space="preserve"
+         id="text1-86-73"
+         style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-778);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+         x="56.941406"
+         y="0"
+         transform="translate(-2.5373338,91.38833)"><tspan
+           x="82.300607"
+           y="51.761876"
+           id="tspan69">KT1_Vom Netzanbieter </tspan><tspan
+           x="112.46474"
+           y="70.09525"
+           id="tspan70">zum Endgerät
+</tspan><tspan
+           x="158.11914"
+           y="88.428625"
+           id="tspan71">
+</tspan><tspan
+           x="120.19913"
+           y="106.762"
+           id="tspan73"><tspan
+             style="fill:#ff0000;stroke:#ff0000"
+             id="tspan72">8 Lektionen</tspan></tspan></text>
+    </g>
+    <g
+       id="g5-50-99"
+       inkscape:label="KT2"
+       transform="translate(818.03527,297.21328)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:1.51181"
+         id="rect5-2-25"
+         width="170.83464"
+         height="95.244087"
+         x="70.15374"
+         y="117.77886" />
+      <text
+         xml:space="preserve"
+         id="text1-86-53"
+         style="font-size:14.6667px;line-height:normal;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1-9-34);shape-padding:0.755909;display:inline;fill:#000000;stroke:#28220b;stroke-width:0.377953;-inkscape-stroke:none;stop-color:#000000"
+         x="56.941406"
+         y="0"
+         transform="translate(-2.5373338,91.38833)"><tspan
+           x="94.937029"
+           y="51.761876"
+           id="tspan74">KT2_Projektauftrag </tspan><tspan
+           x="131.20632"
+           y="70.09525"
+           id="tspan75">«Eigene </tspan><tspan
+           x="102.27038"
+           y="88.428625"
+           id="tspan76">Hausinstallation»
+</tspan><tspan
+           x="120.19913"
+           y="106.762"
+           id="tspan78"><tspan
+             style="fill:#ff0000;stroke:#ff0000"
+             id="tspan77">8 Lektionen</tspan></tspan></text>
     </g>
   </g>
 </svg>

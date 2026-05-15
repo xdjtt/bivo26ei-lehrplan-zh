@@ -6,50 +6,37 @@ function getSiteBase() {
 }
 
 function setupSvgLightbox() {
-  const svgImages = document.querySelectorAll('img[src$=".svg"]')
-
-  svgImages.forEach(img => {
+  document.querySelectorAll('img[src$=".svg"]').forEach(img => {
     if (img.dataset.svgLightbox) return
     img.dataset.svgLightbox = "true"
     img.style.cursor = "zoom-in"
 
     img.addEventListener("click", async () => {
-      const response = await fetch(img.src)
-      const svgText = await response.text()
-
-      const overlay = document.createElement("div")
-      overlay.style.cssText = `
-        position: fixed; inset: 0;
-        background: rgba(0,0,0,0.8);
-        display: flex; align-items: center;
-        justify-content: center;
-        z-index: 9999; cursor: zoom-out;
-      `
-      overlay.innerHTML = svgText
-
-      const svg = overlay.querySelector("svg")
-      svg.style.cssText = `
-        max-width: 90vw;
-        max-height: 90vh;
-        cursor: zoom-out;
-      `
-
-      overlay.addEventListener("click", () => overlay.remove())
-
       const siteBase = getSiteBase()
-      overlay.querySelectorAll("a").forEach(link => {
-        link.style.cursor = "pointer"
-        link.addEventListener("click", (e) => {
-          e.stopPropagation()
-          const href = link.getAttribute("href")
-          if (href && href.startsWith("/")) {
-            e.preventDefault()
-            window.open(siteBase + href, "_blank")
-          }
-        })
-      })
+      const origin = window.location.origin
 
-      document.body.appendChild(overlay)
+      const response = await fetch(img.src)
+      let svgText = await response.text()
+
+      // Relative hrefs (../path) → absolute so they work from blob URL context
+      svgText = svgText.replace(/href="\.\.\/([^"]+)"/g, `href="${origin}${siteBase}/$1"`)
+
+      const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; background: #d0d0d0; display: flex; justify-content: center; align-items: center; }
+  svg { max-width: 95vw; max-height: 95vh; }
+  a { cursor: pointer; }
+</style>
+</head>
+<body>${svgText}</body>
+</html>`
+
+      const blob = new Blob([html], { type: "text/html" })
+      window.open(URL.createObjectURL(blob), "_blank")
     })
   })
 }

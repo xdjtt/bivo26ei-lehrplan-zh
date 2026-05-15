@@ -1,47 +1,89 @@
 # Quartz 4 – Anpassungen und Erweiterungen
 
-Dieses Dokument beschreibt alle Änderungen am Quartz-Standard, die für dieses Projekt vorgenommen wurden. Es dient als Wiederherstellungsreferenz.
+Wiederherstellungsreferenz für alle Änderungen am Quartz-Standard.
+Letzte Aktualisierung: Mai 2026
 
 ---
 
-## Übersicht der geänderten Dateien
+## Übersicht: Update-Sicherheit
 
-| Datei | Art | Update-sicher? |
+| Datei | Art | Sicher bei `npx quartz update`? |
 |---|---|---|
-| `quartz/styles/custom.scss` | Geändert | Ja |
-| `quartz.layout.ts` | Geändert | Ja |
-| `quartz/static/lightbox.js` | Neu erstellt | Ja |
-| `quartz/static/svg-lightbox.js` | Neu erstellt | Ja |
-| `quartz/components/scripts/graph.inline.ts` | Geändert (Core) | Nein – bei Updates manuell prüfen |
+| `quartz.layout.ts` | User-Config | ✅ Ja |
+| `quartz/styles/custom.scss` | User-Customization | ✅ Ja |
+| `quartz/static/lightbox.js` | Eigene Datei | ✅ Ja |
+| `quartz/static/svg-lightbox.js` | Eigene Datei | ✅ Ja |
+| `quartz/components/scripts/graph.inline.ts` | Framework-Kern | ⚠️ **Nein – manuell wiederherstellen** |
 
 ---
 
-## 1. `quartz/styles/custom.scss`
+## ✅ 1. `quartz.layout.ts` — Graph-Konfiguration
 
-Eigene CSS-Anpassungen. Diese Datei überschreibt Quartz-Standardstile, da sie nach `base.scss` (welches `callouts.scss` einschliesst) geladen wird.
+**Was:** Zwei bedingte Graph-Komponenten (Startseite vs. Unterseiten). `#todo`-Tags werden im Graph ausgeblendet. Auf der Startseite wird der Graph mit voller Tiefe (`depth: -1`) angezeigt, auf allen anderen Seiten nur die direkten Nachbarn (`depth: 1`).
+
+**Vollständige Graph-Konfiguration:**
+```typescript
+// Startseite (index): voller Graph
+Component.ConditionalRender({
+  component: Component.Graph({
+    localGraph:  { depth: -1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20,  removeTags: ["todo"] },
+    globalGraph: { depth: -1, repelForce: 8,   centerForce: 0.7, linkDistance: 170, opacityScale: 3, removeTags: ["todo"] },
+  }),
+  condition: (page) => page.fileData.slug === "index",
+}),
+
+// Alle anderen Seiten: nur direkte Nachbarn
+Component.ConditionalRender({
+  component: Component.Graph({
+    localGraph:  { depth: 1, repelForce: 1.2, centerForce: 0.5, linkDistance: 20,  removeTags: ["todo"] },
+    globalGraph: { depth: 1, repelForce: 8,   centerForce: 0.7, linkDistance: 170, opacityScale: 3, removeTags: ["todo"] },
+  }),
+  condition: (page) => page.fileData.slug !== "index",
+}),
+```
+
+> **Hinweis:** `repelForce` wird intern mit `-100` multipliziert → `repelForce: 8` entspricht D3-Stärke `-800`. Werte über `14` sprengen den Graph auseinander.
+
+---
+
+## ✅ 2. `quartz/styles/custom.scss` — Stile
+
+**Was:** Bilder zentriert, Callout-Icons ausgeblendet, drei Callout-Typen mit eigenem Design.
+
+**Verwendung in Markdown:**
+- `> [!example|titel] HS1:` → Handlungssituation (blauer Balken links)
+- `> [!info]` → Kenntnisse (grauer Balken links, Titel versteckt)
+- `> [!note]` → Hinweise (gelber Balken links, Titel versteckt)
+- `> [!info|titel]` oder `> [!note|titel]` → Titel einblenden
 
 **Vollständiger Inhalt:**
 ```scss
 @use "./base.scss";
 
-/* ── Bilder mit Abstand ──────────────────── */
+/* ── Bilder zentriert mit Abstand ─────────── */
 article img {
   display: block;
   margin: 1.5rem auto;
 }
 
-/* ── Callouts ─────────────────────────────── */
-/* Icons ausblenden */
+/* ── Callout-Icons ausblenden ─────────────── */
 .callout-icon {
     display: none;
 }
 
-/* Titel bei Note ausblenden */
-.callout[data-callout="note"] .callout-title {
+/* Titel bei Note und Info standardmässig verstecken */
+.callout[data-callout="note"] .callout-title,
+.callout[data-callout="info"] .callout-title {
     display: none;
 }
 
-/* Handlungssituationen – dezentes Blau */
+/* Titel einblenden mit: > [!info|titel] oder > [!note|titel] */
+.callout[data-callout="note"][data-callout-metadata~="titel"] .callout-title,
+.callout[data-callout="info"][data-callout-metadata~="titel"] .callout-title {
+    display: flex;
+}
+
+/* Handlungssituationen [!example] – dezentes Blau */
 .callout[data-callout="example"] {
     --color: rgb(26, 127, 168);
     --bg: rgba(26, 127, 168, 0.05);
@@ -50,7 +92,7 @@ article img {
     box-shadow: none;
 }
 
-/* Kenntnisse – dezentes Grau */
+/* Kenntnisse [!info] – dezentes Grau */
 .callout[data-callout="info"] {
     --color: rgb(100, 100, 100);
     --bg: rgba(0, 0, 0, 0.03);
@@ -59,7 +101,7 @@ article img {
     box-shadow: none;
 }
 
-/* Hinweise – dezentes Gelb */
+/* Hinweise [!note] – dezentes Gelb */
 .callout[data-callout="note"] {
     --color: rgb(180, 140, 0);
     --bg: rgba(180, 140, 0, 0.05);
@@ -69,60 +111,18 @@ article img {
 }
 ```
 
-**Wichtig für Callouts:** Quartz verwendet `--color`, `--bg` und `--border` als CSS-Variablen (nicht `--callout-color` wie Obsidian Publish). Der Rahmen muss mit `border: none` vollständig zurückgesetzt werden, bevor `border-left` gesetzt wird.
-
 ---
 
-## 2. `quartz.layout.ts`
+## ✅ 3. `quartz/static/lightbox.js` — Lightbox für normale Bilder
 
-Layout-Konfiguration. Anpassungen gegenüber dem Standard:
+**Was:** Klick auf ein Bild (kein SVG) öffnet es in einem dunklen Overlay. SVG-Bilder werden explizit ausgeschlossen, damit kein Doppel-Overlay mit `svg-lightbox.js` entsteht.
 
-- **Seitentitel** (`PageTitle`) wird im Header angezeigt (über die volle Seitenbreite), nicht in der linken Sidebar
-- **Breadcrumbs** werden auf der Index-Seite ausgeblendet
-- **ArticleTitle, ContentMeta, TagList** sind auskommentiert (deaktiviert)
-- **Graph** ist seitenabhängig konfiguriert (Index vs. alle anderen Seiten)
-- **ReaderMode** ist in der Toolbar aktiviert
-
-**PageTitle im Header:**
-
-Der Titel wird in `sharedPageComponents.header` gesetzt und ist damit auf allen Seiten sichtbar. In den `left`-Bereichen von `defaultContentPageLayout` und `defaultListPageLayout` wurde `Component.PageTitle()` entfernt.
-
-```typescript
-export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [Component.PageTitle()],  // ← Titel im Header
-  ...
-}
-```
-
-**Graph-Konfiguration:**
-
-| Parameter | Index-Seite | Andere Seiten | Erklärung |
-|---|---|---|---|
-| `depth` (local) | `-1` (alle) | `1` (direkte Nachbarn) | Tiefe des lokalen Graphen |
-| `depth` (global) | `-1` (alle) | `1` (direkte Nachbarn) | Tiefe beim Klick auf das Graph-Icon |
-| `repelForce` | `1.2` | `1.2` | Abstosskraft zwischen Nodes |
-| `centerForce` (local) | `0.5` | `0.5` | Anziehung zur Mitte |
-| `centerForce` (global) | `*(angepasst)*` | `0.8` | Stärkere Zentrierung im grossen Graph |
-| `linkDistance` (local) | `20` | `20` | Länge der Verbindungslinien |
-| `linkDistance` (global) | `*(angepasst)*` | `15` | Kürzere Linien im grossen Graph |
-
----
-
-## 3. `quartz/static/lightbox.js` *(neu erstellt)*
-
-Lightbox für normale Bilder (alle ausser SVG). Beim Klick auf ein Bild öffnet sich ein dunkles Overlay mit dem Bild in Vollgrösse. Klick auf das Overlay schliesst es wieder.
-
-**Wichtig:** SVG-Bilder werden explizit ausgeschlossen (`:not([src$='.svg'])`), damit kein Doppel-Overlay mit `svg-lightbox.js` entsteht.
-
-**Vollständiger Inhalt:**
 ```javascript
 document.addEventListener("DOMContentLoaded", () => { setupLightbox() })
 document.addEventListener("nav", () => { setupLightbox() })
 
 function setupLightbox() {
   const overlay = document.getElementById("lightbox-overlay") ?? createOverlay()
-
   document.querySelectorAll("article img:not([src$='.svg'])").forEach((img) => {
     img.style.cursor = "zoom-in"
     img.addEventListener("click", () => {
@@ -150,54 +150,56 @@ function createOverlay() {
 
 ---
 
-## 4. `quartz/static/svg-lightbox.js` *(neu erstellt)*
+## ✅ 4. `quartz/static/svg-lightbox.js` — Lightbox für SVG-Bilder
 
-Lightbox speziell für SVG-Dateien. Im Gegensatz zur normalen Lightbox wird das SVG inline gerendert, damit enthaltene Links klickbar bleiben.
+**Was:** Klick auf ein SVG-Bild öffnet die SVG in einem neuen Tab, zentriert in einer HTML-Seite. Interne Links (AS1, ID3 etc.) navigieren im selben Tab zur entsprechenden Seite.
 
-**Besonderheiten:**
-- `data-svg-lightbox`-Attribut verhindert doppelte Event-Listener bei mehrfachem Seitenaufruf (Quartz ruft `nav` und `DOMContentLoaded` auf)
-- Klick auf SVG-Links (`<a>`) schliesst das Overlay **nicht** (via `stopPropagation`)
-- Klick irgendwo sonst schliesst das Overlay
+**Technischer Hintergrund:**
+- Die SVG wird per `fetch` geladen und als Inline-SVG in eine HTML-Seite eingebettet
+- Relative Pfade (`../01_Lehrjahr/...`) werden zu absoluten URLs umgeschrieben, damit sie vom Blob-URL-Kontext aus funktionieren
+- `getSiteBase()` liest den Basispfad aus der Script-URL → funktioniert auch bei GitHub Pages mit Unterordner-Deployment (z.B. `user.github.io/repo/`)
 
-**Vollständiger Inhalt:**
 ```javascript
+function getSiteBase() {
+  const script = document.querySelector('script[src*="svg-lightbox.js"]')
+  if (!script) return ""
+  const scriptUrl = new URL(script.getAttribute("src"), window.location.href)
+  return scriptUrl.pathname.replace(/\/static\/svg-lightbox\.js$/, "")
+}
+
 function setupSvgLightbox() {
-  const svgImages = document.querySelectorAll('img[src$=".svg"]')
-  
-  svgImages.forEach(img => {
+  document.querySelectorAll('img[src$=".svg"]').forEach(img => {
     if (img.dataset.svgLightbox) return
     img.dataset.svgLightbox = "true"
     img.style.cursor = "zoom-in"
 
     img.addEventListener("click", async () => {
+      const siteBase = getSiteBase()
+      const origin = window.location.origin
+
       const response = await fetch(img.src)
-      const svgText = await response.text()
-      
-      const overlay = document.createElement("div")
-      overlay.style.cssText = `
-        position: fixed; inset: 0;
-        background: rgba(0,0,0,0.8);
-        display: flex; align-items: center;
-        justify-content: center;
-        z-index: 9999; cursor: zoom-out;
-      `
-      overlay.innerHTML = svgText
+      let svgText = await response.text()
 
-      const svg = overlay.querySelector("svg")
-      svg.style.cssText = `
-        max-width: 90vw;
-        max-height: 90vh;
-        cursor: zoom-out;
-      `
+      // Relative hrefs (../pfad) → absolute URLs für Blob-URL-Kontext
+      svgText = svgText.replace(/href="\.\.\/([^"]+)"/g, `href="${origin}${siteBase}/$1"`)
 
-      overlay.addEventListener("click", () => overlay.remove())
+      const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; background: #d0d0d0;
+               display: flex; justify-content: center; align-items: center; }
+  svg { max-width: 95vw; max-height: 95vh; }
+  a { cursor: pointer; }
+</style>
+</head>
+<body>${svgText}</body>
+</html>`
 
-      overlay.querySelectorAll("a").forEach(link => {
-        link.style.cursor = "pointer"
-        link.addEventListener("click", (e) => e.stopPropagation())
-      })
-      
-      document.body.appendChild(overlay)
+      const blob = new Blob([html], { type: "text/html" })
+      window.open(URL.createObjectURL(blob), "_blank")
     })
   })
 }
@@ -208,101 +210,82 @@ document.addEventListener("nav", () => { setupSvgLightbox() })
 
 ---
 
-## 5. `quartz/components/scripts/graph.inline.ts` *(Core-Datei – Update-Risiko)*
+## ⚠️ 5. `quartz/components/scripts/graph.inline.ts` — Graph-Rendering
 
-> **Achtung:** Diese Datei gehört zum Quartz-Kern. Bei einem `git pull` vom Upstream-Repo können hier Merge-Konflikte entstehen. Die drei Änderungen müssen dann manuell erneut eingepflegt werden.
+> **Diese Datei wird bei `npx quartz update` überschrieben.**
+> Nach jedem Update die drei folgenden Stellen manuell wiederherstellen.
 
-### Änderung 1 – Unverlinkte Nodes ausblenden
+### Änderung A — Knotengrösse nach eingehenden Links (ca. Zeile 216)
 
-**Wo:** Nach Zeile 162 (nach dem Aufbau von `graphData`)
+**Wozu:** Leistungsziele (d2.3, a1.1 etc.) auf die viele Blöcke verweisen werden gross dargestellt. Blöcke selbst (ID4, KT3), die nur verlinken, bleiben klein.
 
-**Einfügen:**
 ```typescript
-// Unverlinkte Nodes ausblenden (ausser aktuelle Seite)
-const linkedIds = new Set<SimpleSlug>()
-graphData.links.forEach((l) => {
-  linkedIds.add(l.source.id)
-  linkedIds.add(l.target.id)
-})
-graphData.nodes = graphData.nodes.filter((n) => linkedIds.has(n.id) || n.id === slug)
-```
-
-### Änderung 2 – Kollisions-Radius erhöhen
-
-**Wo:** In der Simulation-Konfiguration (Zeile ~180)
-
-**Original:**
-```typescript
-.force("collide", forceCollide<NodeData>((n) => nodeRadius(n)).iterations(3))
-```
-
-**Geändert zu:**
-```typescript
-.force("collide", forceCollide<NodeData>((n) => nodeRadius(n) + 14).iterations(3))
-```
-
-**Zweck:** Verhindert Label-Überlappungen indem Nodes einen Mindestabstand von 14px halten.
-
-### Änderung 3 – Label-Abstand erhöhen
-
-**Wo:** In der Label-Erstellung (Zeile ~390)
-
-**Original:**
-```typescript
-anchor: { x: 0.5, y: 1.2 },
-```
-
-**Geändert zu:**
-```typescript
-anchor: { x: 0.5, y: 1.6 },
-```
-
-**Zweck:** Verschiebt den Label-Text weiter vom Node weg. Höherer Wert = mehr Abstand.
-
----
-
-## 6. `quartz/static/svg-lightbox.js` — Subdirectory-Fix
-
-Damit SVG-Links sowohl lokal als auch auf GitHub Pages (Unterverzeichnis wie `xdjtt.github.io/quartz`) funktionieren, wird der Basispfad automatisch aus der Script-URL ausgelesen:
-
-```javascript
-function getSiteBase() {
-  const script = document.querySelector('script[src*="svg-lightbox.js"]')
-  if (!script) return ""
-  const scriptUrl = new URL(script.getAttribute("src"), window.location.href)
-  return scriptUrl.pathname.replace(/\/static\/svg-lightbox\.js$/, "")
+function nodeRadius(d: NodeData) {
+  const numIncoming = graphData.links.filter(
+    (l) => l.target.id === d.id,
+  ).length
+  return 2 + Math.sqrt(numIncoming) * 4
 }
 ```
 
-SVG-Links mit root-relativem Pfad (`/01_Lehrjahr/...`) werden beim Klick mit dem Basispfad ergänzt:
-- Lokal: Basispfad = `""` → kein Unterschied
-- GitHub Pages: Basispfad = `/quartz` → `/quartz/01_Lehrjahr/...`
+### Änderung B — Texte mit Zeilenumbruch (im `new Text({...})` Block, ca. Zeile 391)
 
-SVG-Links müssen mit `/` beginnen (root-relativ), z.B.:
-```xml
-<a href="/01_Lehrjahr/AS1_Baustelle-einrichten,-PSA" target="_blank">
+**Wozu:** Lange Knotennamen werden umgebrochen statt überlappend dargestellt.
+
+```typescript
+style: {
+  fontSize: fontSize * 15,
+  fill: computedStyleMap["--dark"],
+  fontFamily: computedStyleMap["--bodyFont"],
+  wordWrap: true,        // ← NEU
+  wordWrapWidth: 120,    // ← NEU
+  align: "center",       // ← NEU
+},
 ```
-Quartz wandelt Leerzeichen in Dateinamen in `-` um.
 
-## 7. `quartz/components/Head.tsx` — Lightbox-Pfad-Fix *(Core-Datei)*
+### Änderung C — Kollisionsradius (`.force("collide", ...)`, ca. Zeile 180)
 
-Der absolute Pfad `/static/lightbox.js` wurde auf einen relativen Pfad geändert, damit er auf GitHub Pages in Unterverzeichnissen funktioniert:
+**Wozu:** Knoten halten grösseren Abstand → Labels überlappen sich nicht.
 
-**Original:**
-```tsx
-<script src="/static/lightbox.js" defer></script>
-```
-**Geändert zu:**
-```tsx
-<script src={`${baseDir}/static/lightbox.js`} defer></script>
+```typescript
+.force("collide", forceCollide<NodeData>((n) => nodeRadius(n) + 55).iterations(5))
 ```
 
 ---
 
-## Wiederherstellung nach Quartz-Update
+## SVG-Chronologie — Linkstruktur
 
-1. `quartz/styles/custom.scss` — Inhalt aus Abschnitt 1 einfügen
-2. `quartz.layout.ts` — Graph-Konfiguration aus Abschnitt 2 übernehmen
-3. `quartz/static/lightbox.js` — Neue Datei mit Inhalt aus Abschnitt 3 erstellen
-4. `quartz/static/svg-lightbox.js` — Neue Datei mit Inhalt aus Abschnitt 4 erstellen
-5. `quartz/components/scripts/graph.inline.ts` — Die drei Änderungen aus Abschnitt 5 manuell einpflegen (Merge-Konflikt auflösen)
+Die Datei `content/_Bilder/Chronologie_1.Lehrjahr.svg` enthält klickbare Links für AS1–AS4 und ID1–ID5.
+
+**Inkscape-kompatible Struktur** (`<a>` muss `<g>` umschliessen, nicht umgekehrt):
+```xml
+<a
+   href="../01_Lehrjahr/AS1_Baustelle-einrichten,-PSA"
+   id="link-as1">
+  <g id="g5-50" inkscape:label="AS1" transform="...">
+    <rect ... />
+    <text ... />
+  </g>
+</a>
+```
+
+**Pfade als relative URLs** (`../01_Lehrjahr/...`):
+- Funktioniert wenn SVG direkt im Browser geöffnet wird (neuer Tab)
+- Wird von `svg-lightbox.js` zu absoluten URLs umgeschrieben (Blob-Kontext)
+- Kompatibel mit GitHub Pages Unterordner-Deployment
+
+**Quartz-Slugify-Regeln** (für korrekte URLs):
+- Leerzeichen → `-`
+- Umlaute bleiben (ä, ö, ü)
+- Klammern bleiben — z.B. `AS4_PSA-(Elektro)`
+- `«»` → entfernt
+
+---
+
+## Wiederherstellung nach `npx quartz update`
+
+1. `quartz.layout.ts` — Graph-Konfiguration aus Abschnitt 1 prüfen (meist unverändert)
+2. `quartz/styles/custom.scss` — Inhalt aus Abschnitt 2 prüfen (meist unverändert)
+3. `quartz/static/lightbox.js` — Falls überschrieben: Inhalt aus Abschnitt 3 einfügen
+4. `quartz/static/svg-lightbox.js` — Falls überschrieben: Inhalt aus Abschnitt 4 einfügen
+5. `quartz/components/scripts/graph.inline.ts` — **Die drei Änderungen A, B, C aus Abschnitt 5 manuell einpflegen**

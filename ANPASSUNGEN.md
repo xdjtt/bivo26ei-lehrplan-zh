@@ -357,6 +357,35 @@ Die Datei `content/_Bilder/Chronologie_1.Lehrjahr.svg` enthält klickbare Links 
 
 ---
 
+## Auswertungen — Dataview in Quartz
+
+Quartz unterstützt Dataview-Abfragen nicht nativ (Dataview ist ein Obsidian-Plugin, Quartz ist statisch). Die Lösung: das Obsidian-Plugin **Dataview Serializer** rendert Abfragen vor dem Build zu statischem Markdown vor.
+
+**Ordner:** `content/Auswertungen/`
+
+**Funktionsweise:**
+1. Im Obsidian-Editor läuft das Dataview Serializer Plugin im Hintergrund
+2. Es liest den `<!-- QueryToSerialize: ... -->` Kommentar und führt die Dataview-Abfrage aus
+3. Das Ergebnis wird als statische Markdown-Tabelle zwischen `<!-- SerializedQuery: ... -->` und `<!-- SerializedQuery END -->` gespeichert
+4. Quartz rendert diese Tabelle als normales Markdown — ohne Dataview-Kenntnis
+
+**Beispiel** (`content/Auswertungen/ToDo.md`):
+```markdown
+<!-- QueryToSerialize: TABLE WITHOUT ID item.section AS "Abschnitt", item.text AS "Aufgabe"
+FROM "" FLATTEN file.lists AS item WHERE contains(item.tags, "todo") -->
+<!-- SerializedQuery: ... -->
+| Abschnitt | Aufgabe |
+|---|---|
+| ... | ... #todo |
+<!-- SerializedQuery END -->
+```
+
+**Hinweis:** Die Tabelle wird nur aktualisiert, wenn die Datei in Obsidian geöffnet und das Plugin aktiv ist. Nach Änderungen im Vault die Datei kurz in Obsidian öffnen, dann committen.
+
+**Verbindung zum Graph:** `#todo`-Tags sind im Graph ausgeblendet (`removeTags: ["todo"]` in `quartz.layout.ts`).
+
+---
+
 ## Wiederherstellung nach `npx quartz update`
 
 1. `quartz.layout.ts` — Graph-Konfiguration aus Abschnitt 1 prüfen (meist unverändert)

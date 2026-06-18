@@ -349,6 +349,14 @@ Die Datei `content/_Bilder/Chronologie_1.Lehrjahr.svg` enthält klickbare Links 
 - Wird von `svg-lightbox.js` zu absoluten URLs umgeschrieben (Blob-Kontext)
 - Kompatibel mit GitHub Pages Unterordner-Deployment
 
+**Achtung — `href` statt `xlink:href`:**
+Inkscapes Hyperlink-Dialog (Objekt → Hyperlink) schreibt standardmässig `xlink:href` (alte SVG-1.1-Syntax aus dem `xlink`-Namensraum). `svg-lightbox.js` erkennt aber nur das moderne `href`-Attribut (Regex-Ersetzung der Pfade UND `link.getAttribute("href")` beim Klick-Handler greifen beide nicht bei `xlink:href`). Folge: Link sieht im XML-Editor korrekt aus, tut aber beim Klick nichts.
+
+Fix nach jedem neu erstellten Link in Inkscape:
+1. XML-Editor öffnen (Strg+Umschalt+X), `<a>`-Element auswählen
+2. Attribut `xlink:href` in `href` umbenennen (oder zusätzliches `href`-Attribut mit gleichem Wert anlegen)
+3. Alternativ: vor dem Commit per Suchen/Ersetzen `xlink:href="` → `href="` über die ganze Datei laufen lassen
+
 **Quartz-Slugify-Regeln** (für korrekte URLs):
 - Leerzeichen → `-`
 - Umlaute bleiben (ä, ö, ü)

@@ -24,6 +24,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.ArticleTitle(),
     // Component.ContentMeta(),
     // Component.TagList(),
+    Component.LektionenVorgabe(),
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),

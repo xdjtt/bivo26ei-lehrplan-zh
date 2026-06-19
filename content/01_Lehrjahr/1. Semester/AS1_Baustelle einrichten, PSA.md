@@ -1,4 +1,4 @@
-﻿---
+---
 block: AS1
 lehrjahr: "1"
 lektionen_vorgabe: "8"

@@ -12,6 +12,7 @@ leistungsziele:
 
 ## Handlungssituationen
 
+Handlungssituation aus Lehrmittel einfügen
 > [!example|titel] HS1:
 > - Noch keine Handlung vorhanden #todo
 

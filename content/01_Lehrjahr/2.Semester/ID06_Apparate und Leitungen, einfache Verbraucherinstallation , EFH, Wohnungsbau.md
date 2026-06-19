@@ -30,6 +30,7 @@ leistungsziele:
 > Sie erweitern in einem Korridor eine bestehende Wechselschaltung (Sch 3) mit einer Orientierungsleuchte, um die Bedienung bei Dunkelheit zu erleichtern.
 > 
 > - Absegnen der Anpassung der Handlung #todo
+> - --> originalhandlung nehmen
 
 > [!example|titel] HS4:
 > In einem Übungslabor einer Berufsschule sollen Sie an verschiedenen Verbrauchern, welche parallel geschaltet sind, Messungen und Berechnungen zu Spannung, Strom, Widerstand und Leistung durchführen.

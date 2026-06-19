@@ -6,7 +6,7 @@
 >Klicke auf die Grafik der Chronologie um diese zu vergrössern und interaktiv in die entsprechenden Blöcke zu springen.
 >Zur Zeit funktionieren nur AS und ID zu Testzwecken. Die Grafik ist auch nicht final.
 
-![[Chronologie_1.Lehrjahr.svg|602]]
+![[Chronologie_1.Lehrjahr V3.svg]]
 ### 1. Semester
 - [[AS1_Baustelle einrichten, PSA]]
 - [[AS2_Abfälle und Gefahrenstoffe]]

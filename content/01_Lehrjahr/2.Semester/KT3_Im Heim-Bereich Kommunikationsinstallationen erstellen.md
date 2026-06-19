@@ -22,15 +22,15 @@ leistungsziele:
 
 ## Kenntnisse
 
-> [!info|titel] CU-Theorie & Kabelinstallation [[d4.1]] / [[d4.2]]
+> [!info|titel] Cu-Theorie & Kabelinstallation [[d4.1]] / [[d4.2]]
 > - Bedeutung der KT (kurzer Überblick)
-> - Theorie CU: (Definition Kategorie und Link-Klasse)
+> - Theorie Cu: (Definition Kategorie und Link-Klasse)
 >   - Kabel Kabeltypen
 >     - UKV (Z.B. S-FTP), Arten
 >     - U72 inkl. Farbcode bis 2 x 4
 >   - Dosen und Module (Kategorie)
 >     - Verbindungen (Patchkabel, Stecker, Klemmen)
->- Abklären was mit der CU-Theorie gemeint ist #todo 
+>- Abklären was mit der Cu-Theorie gemeint ist #todo 
 
 > [!info|titel] Hausanschluss [[d4.1]] / [[d4.2]]
 > - Hausanschlussarten:

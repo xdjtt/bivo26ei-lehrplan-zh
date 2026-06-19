@@ -1,4 +1,4 @@
-﻿---
+---
 block: AS4
 lehrjahr: "1"
 semester: "1"

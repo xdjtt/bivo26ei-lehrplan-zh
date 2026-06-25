@@ -14,7 +14,7 @@ leistungsziele:
 ## Handlungssituationen
 
 > [!example|titel] HS1:
-> Ihr verantwortlicher Monteur und Sie erhalten von ihrem Vorgesetzten den Auftrag, eine Steckdose bei einem Kunden auszuwechseln. Sie als Lehrling erleben die praktische Anwendung der 5+5 Sicherheitsregeln Schritt für Schritt.
+> Ihr verantwortlicher Monteur und Sie erhalten von Ihrem Vorgesetzten den Auftrag, eine Steckdose bei einem Kunden auszuwechseln. Sie als Lehrling erleben die praktische Anwendung der 5+5 Sicherheitsregeln Schritt für Schritt.
 
 > [!example|titel] HS2:
 > Zwei Monteure erhalten von ihrem Arbeitgeber den Auftrag, in einer Industrieanlage eine defekte Stromwandlermesseinrichtung auszutauschen. Da es sich um einen Produktionsbetrieb handelt, darf die Stromversorgung nicht unterbrochen werden.
@@ -25,7 +25,7 @@ leistungsziele:
 
 > [!info|titel] HS1
 > - Kennt die 5+5 Sicherheitsregeln. [[a1.4]]
-> - Kennt den Begriff AuS 1 (Gehört zur Feststellung der Spannungsfreiheit) [[a1.4]]
+> - Kennt den Begriff AuS 1<sup>1</sup> (Gehört zur Feststellung der Spannungsfreiheit) [[a1.4]]
 
 > [!info|titel] HS2
 > - Kennt das Zwiebelschalenmodell und ordnet den jeweiligen Kurzschlussstromstärken die passende PSA zu. [[a4.4]]
@@ -34,4 +34,4 @@ leistungsziele:
 ## Hinweise
 
 > [!note]
-> - Arbeiten unter Spannung 1 (AuS 1) sofern im 3.ÜK behandelt und in der Praxis trainiert und periodisch überwacht + 18. Lebensjahr. Siehe Anhang 2 Ziffer 8c BiVo 2026 (Anleitung der Lernenden)
+> -  <sup>1</sup> Arbeiten unter Spannung 1 (AuS 1) sofern im 3.ÜK behandelt und in der Praxis trainiert und periodisch überwacht + 18. Lebensjahr. Siehe Anhang 2 Ziffer 8c BiVo 2026 (Anleitung der Lernenden)

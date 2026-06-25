@@ -25,13 +25,12 @@ leistungsziele:
 > [!info] 
 > - Kennt die Formeln zur Berechnung von Flächen/Umfängen von Kreisen, Rechtecken und Dreiecken. [[a2.4]]
 > - Kennt den Zusammenhang zwischen Leiterlänge, Querschnitt und Widerstand (Formel Leiterwiderstand) [[a2.1]]
-> - Kennt die drei Erderarten gemäss NIN 5.4.2.2 Tabelle 1 (G)<sup>1</sup> [[b2.1]]
+> - Kennt die drei Erderarten gemäss NIN 5.4.2.2 Tabelle 1 [[b2.1]]
 > - Kennt die Formeln, um das Volumen von Quadern und Zylindern zu berechnen. [[a2.4]]
 > - Kennt den mathematischen Zusammenhang von Dichte, Masse und Volumen. [[a2.4]]
-> - Kennt Begriffe gemäss NIN 5.4.2 (Bild Erdungsleiter)<sup>2</sup> (G) [[b2.1]]
+> - Kennt Begriffe gemäss NIN 5.4.2 (Bild Erdungsleiter) [[b2.1]]
 
 ## Hinweise
 
 > [!note]
-> - <sup>1</sup> Grunldagen definieren #todo
-> - <sup>2</sup> Grundlagen definieren #todo
+>

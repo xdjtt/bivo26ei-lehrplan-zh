@@ -29,13 +29,13 @@ leistungsziele:
 > - Kennt den Aufbau der zu verwendenden Kabel für eine einfache AP Installation (Isolierung PVC, Gummi etc.) [[a3.1]]
 > - Kennt die verschiedenen Messgeräte für die Grössen U, I und R und weiss, wie diese in den Stromkreis geschaltet werden [[a2.1]]
 > - Kennt das ohmsche Gesetz [[a2.4]]
-> - Kennt die Massvorsätze, Zehnerpotenzen, sowie die grundlegenden Taschenrechnerfunktionen (Speichern, Potenzrechnen) (G)<sup>2</sup> [[a2.4]]
+> - Kennt die Massvorsätze, Zehnerpotenzen, sowie die grundlegenden Taschenrechnerfunktionen (Speichern, Potenzrechnen) [[a2.4]]
 
 ## Hinweise
 
 > [!note]
 >- <sup>1</sup> Schaltungen auch praktisch im Labor umsetzen
-> - <sup>2</sup> Grundlagen genauer definieren. #todo
+
 
 <sup></sup>
 

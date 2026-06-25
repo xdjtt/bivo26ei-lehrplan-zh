@@ -20,7 +20,7 @@ leistungsziele:
 > In einem Lagerraum soll die Beleuchtung automatisch geschaltet werden. Sie installieren den Präsenzmelder (Master/Slave) gemäss Herstellerangaben. Dabei erstellen Sie die erforderlichen Schalt- und Anschlusspläne, wählen die Betriebsmittel und Kabel gemäss NIN aus und prüfen die Funktion der Anlage.
 
 > [!example|titel] HS2:
-> Sie beraten die Bauherrschaft in Bezug auf eine Holzstaub Absauganlage für eine Holzwerkstatt. Sie stellen der Bauherrschaft zwei mögliche Steuerungsvarianten vor: eine Dauerkontaktsteuerung und eine Impulskontaktsteuerung mit Schütz. Sie erklären, wie beide Steuerungen funktionieren, und begründen, welche Variante weshalb sinnvoll ist.
+> Sie beraten die Bauherrschaft in Bezug auf eine Holzstaub-Absauganlage für eine Holzwerkstatt. Sie stellen der Bauherrschaft zwei mögliche Steuerungsvarianten vor: eine Dauerkontaktsteuerung und eine Impulskontaktsteuerung mit Schütz. Sie erklären, wie beide Steuerungen funktionieren, und begründen, welche Variante weshalb sinnvoll ist.
 
 > [!example|titel] HS3:
 > Bei der Montage eines Kabelträgersystems prüfen Sie die Belastung durch Kabel und Eigengewicht. Sie berechnen die wirkenden Kräfte und Drehmomente, wählen geeignete Befestigungspunkte und führen die Montage fachgerecht aus.
@@ -38,4 +38,4 @@ leistungsziele:
 ## Hinweise
 
 > [!note]
-> - <sup>1</sup> Theoretische + praktische Umsetzung im Labor!
+> - <sup>1</sup> Schaltungen auch praktisch im Labor umsetzen.

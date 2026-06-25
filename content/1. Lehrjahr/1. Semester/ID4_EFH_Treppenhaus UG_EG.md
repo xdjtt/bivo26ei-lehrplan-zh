@@ -31,4 +31,4 @@ leistungsziele:
 
 > [!note]
 >-  <sup>1</sup> Flammwidrigkeit von UP-Einlasskasten (BSP: Holz)
->-  <sup>2</sup> Theoretische + praktische Umsetzung im Labor!
+>-  <sup>2</sup> Schaltungen auch praktisch im Labor umsetzen

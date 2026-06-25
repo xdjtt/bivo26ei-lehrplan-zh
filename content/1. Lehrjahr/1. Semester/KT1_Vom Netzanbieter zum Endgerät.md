@@ -14,13 +14,10 @@ leistungsziele:
 
 Handlungssituation aus Lehrmittel einfügen
 > [!example|titel] HS1:
-> - Noch keine Handlung vorhanden #todo
-
-> [!example|titel] HS2:
-> Text
-
-> [!example|titel] HS3:
-> Text
+> Sie bereiten sich auf ein Kundengespräch vor, indem Sie die aktuelle KT Installation analysieren. Themen sind:
+> - Wie sieht die Hauseinführung aus, welche Technologien führen zum Haus?
+> - Welche Dienstleistungen werden von den Telekommunikationsanbietern bereitgestellt?
+> - Wie sieht die aktuelle Installation im Haus aus?
 
 ## Kenntnisse
 
@@ -36,9 +33,9 @@ Handlungssituation aus Lehrmittel einfügen
 >	- Datenvolumen in Byte
 
 > [!info|titel] Hausinstallation [[d4.1]]
-> - Kennt den optischen Unterschied zwischen OTO-, Netzwerk-,Koaxdose
+> - Kennt den optischen Unterschied zwischen OTO-, Netzwerk-, Koaxdose
 >- Kennt Begriff MM-Verteiler, Sternverrohrung
->- Kennt den optischen Unterschied zwischen LWL,-LAN, und Koaxkabel
+>- Kennt den optischen Unterschied zwischen LWL-, LAN- und Koaxkabel
 >- Kennt Symbole, Leitungsarten, Farben im Installationsplan
 ## Hinweise
 

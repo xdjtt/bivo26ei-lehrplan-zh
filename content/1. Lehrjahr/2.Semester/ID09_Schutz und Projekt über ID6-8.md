@@ -30,7 +30,7 @@ leistungsziele:
 > [!example|titel] HS2:
 > Sie erhalten den Auftrag, für eine Schule, die elektrische Installation für eine Holzwerkstatt zu planen. In dieser Planung beschäftigen Sie sich mit der Erstellung von Lage- und Kabelzugplänen und der Dokumentation der Steuerung der technischen Anlagen mittels Wirkschalt- und/oder Stromlaufschemas.
 >
->Die Bauherrschaft wünscht, dass die gesamte Installation für die Holzwerkstatt Aufputz über Kabeltrassen, Installationskanäle und Aluminiumrohre erfolgt. Die Zuleitungen für alle Gerätschaften, inklusive der Beleuchtung, erfolgen über ein langes Kabeltrasse, welche zur grossen Etagenunterverteilung führt.
+>Die Bauherrschaft wünscht, dass die gesamte Installation für die Holzwerkstatt Aufputz über Kabeltrassen, Installationskanäle und Aluminiumrohre erfolgt. Die Zuleitungen für alle Gerätschaften, inklusive der Beleuchtung, erfolgen über ein langes Kabeltrasse, welches zur grossen Etagenunterverteilung führt.
 >
 >Mögliche Themen zur Repetition aus Blöcken ID1-8 zu dieser Handlung:
 >- Spannungsfall

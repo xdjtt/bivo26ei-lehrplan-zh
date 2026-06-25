@@ -14,10 +14,10 @@ leistungsziele:
 ## Handlungssituationen
 
 > [!example|titel] HS1:
-> Im Berufsalltag stellt der Elektroinstallateur sicher, dass Kabelreste in die dafür vorgesehenen Behälter kommen, Verpackungsmaterialien recycelt werden und alte Elektrogeräte an die entsprechenden Sammelstellen zurückgegeben werden.
+> Im Berufsalltag stellt der Elektroinstallateur sicher, dass Kabelreste in die dafür vorgesehenen Behälter kommen, Verpackungsmaterialien recycelt und alte Elektrogeräte an die entsprechenden Sammelstellen zurückgegeben werden.
 
 > [!example|titel] HS2:
-> Im Verlaufe des Umbaus muss eine Eternit-Unterverteilung demontiert und fachgerecht entsorgt werden.
+> Im Verlaufe des Umbaus muss eine Ethernet-Unterverteilung demontiert und fachgerecht entsorgt werden.
 
 > [!example|titel] HS3:
 > Der Elektroinstallateur ist mit verschiedenen gesundheitsgefährdenden Chemikalien im Baugewerbe konfrontiert. Er interpretiert die Gefahrensymbole und geht fachgerecht damit um.

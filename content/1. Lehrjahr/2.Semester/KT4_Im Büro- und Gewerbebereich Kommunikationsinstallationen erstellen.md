@@ -21,7 +21,7 @@ leistungsziele:
 
 > [!example|titel] HS3:
 > Sie helfen mit bei der Messung einer Telekommunikationsinstallation in einem Gewerbebetrieb.
-> Das Ziehl ist die Qualitätskontrolle der erstellten LWL und CU-Verbindungen.
+> Das Ziel ist die Qualitätskontrolle der erstellten LWL und CU-Verbindungen.
 
 ## Kenntnisse
 

@@ -13,7 +13,7 @@ leistungsziele:
 ## Handlungssituationen
 
 > [!example|titel] HS1:
-> Für ein Kundenprojekt erhalten Sie den Auftrag, die bestehende Telekominfrastruktur eines Hauses, einer Wohnung zu analysieren und die Ergebnisse du dokumentieren und kurz zu präsentieren.
+> Für ein Kundenprojekt erhalten Sie den Auftrag, die bestehende Telekominfrastruktur eines Hauses, einer Wohnung zu analysieren und die Ergebnisse zu dokumentieren und kurz zu präsentieren.
 > 
 > Empfehlungen:
 >- Hausinstallation der Lernenden verwenden
@@ -27,7 +27,7 @@ leistungsziele:
 ## Kenntnisse
 
 > [!info] 
-> - Kennen den Sinn und Zweck verschiedener Komponenten und können diese erklären (Dosen, Modem, TV-Box, Router, Switch, TV-Boxe, etc.) [[d4.1]]
+> - Kennen den Sinn und Zweck verschiedener Komponenten und können diese erklären (Dosen, Modem, TV-Box, Router, Switch, TV-Boxen, etc.) [[d4.1]]
 > - Vertiefen der Begriffe und Kenntnisse aus KT1 [[d4.1]]
 ## Hinweise
 

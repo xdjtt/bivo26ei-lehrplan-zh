@@ -30,7 +30,7 @@ leistungsziele:
 ## Kenntnisse
 
 > [!info] 
-> - Kennt den grundlegenden Aufbau von kombinierten Anlagen mit Minuterie, Dämmerungsschalter und Zeitschaltuhren im Wirkschaltschema, Stromlaufschema und Apparateplan mit den korrekten Symbolen und Bezeichnungen (V).<sup>1</sup><sup>,2</sup> [[a2.1]]
+> - Kennt den grundlegenden Aufbau von kombinierten Anlagen mit Minuterie, Dämmerungsschalter und Zeitschaltuhren im Wirkschaltschema, Stromlaufschema und Apparateplan mit den korrekten Symbolen und Bezeichnungen.<sup>1</sup> [[a2.1]]
 > - Kennt die Schallschutzmassnahmen gemäss SIA 181 beim Einlegen von Leitungen, Steckdosen, etc. in Wänden/Decken [[b5.1]]
 > - Kennt den Aufbau von Herstellerdokumenten und weiss, wie diese zu lesen und anzuwenden sind. [[c2.1]]
 > - Kennt die Bedeutung vom Spannungsfall für den Leiter (Erwärmung, Stromdichte) inkl. Berechnung und den Zusammenhang zur Norm (4 %) gemäss NIN-C [[a2.4]] / [[c1.1]]
@@ -40,5 +40,5 @@ leistungsziele:
 ## Hinweise
 
 > [!note]
-> - <sup>1</sup> Theoretische + praktische Umsetzung im Labor!
-> - <sup>2</sup> Vertiefung genauer definieren #todo
+> - <sup>1</sup> Schaltungen auch praktisch im Labor umsetzen.
+

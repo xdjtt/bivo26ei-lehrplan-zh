@@ -2,9 +2,9 @@
 
 ## Chronologie
 
-> [!note]
->Klicke auf die Grafik der Chronologie um diese zu vergrössern und interaktiv in die entsprechenden Blöcke zu springen.
->Zur Zeit funktionieren nur AS und ID zu Testzwecken. Die Grafik ist auch nicht final.
+> [!note] Hinweise
+>- Die empfohlene Anzahl an Lektionen erscheint oberhalb des jeweiligen Blocktitels.
+>- Die Grafik des Semesterplans ist interaktiv.
 
 ![[Chronologie_1.Lehrjahr V3.svg]]
 ### 1. Semester

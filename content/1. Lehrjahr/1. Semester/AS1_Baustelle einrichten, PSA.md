@@ -23,7 +23,7 @@ leistungsziele:
 > - Organe der Arbeitssicherheit
 
 > [!example|titel] HS3:
-> Ein Mitarbeiter von ihnen hat sich auf der Baustelle in den Finger geschnitten. Er blutet stark. Erklären Sie die erste Hilfe Massnahmen.
+> Ein Mitarbeiter von ihnen hat sich auf der Baustelle in den Finger geschnitten. Er blutet stark. Erklären Sie die Erste-Hilfe-Massnahmen.
 > (Erste Hilfe bei Elektrounfällen in AS3)
 
 ## Kenntnisse
@@ -35,7 +35,7 @@ leistungsziele:
 > - Kennt die Pflichten und Rechte eines Arbeitnehmers. Kennt die Organe der Arbeitssicherheit. [[a1.4]]
 
 > [!info|titel] HS3 
-> - Kennt erste-Hilfe-Massnahmen bei Schnittverletzungen [[a1.4]]
+> - Kennt Erste-Hilfe-Massnahmen bei Schnittverletzungen [[a1.4]]
 
 ## Hinweise
 

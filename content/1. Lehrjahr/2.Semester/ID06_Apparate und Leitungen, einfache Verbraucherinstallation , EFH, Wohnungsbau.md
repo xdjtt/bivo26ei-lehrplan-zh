@@ -23,27 +23,20 @@ leistungsziele:
 > Sie erhalten den Auftrag, die Treppenhausbeleuchtung in einem Mehrfamilienhaus zu installieren. Die Beleuchtung wird über beleuchtete Drucktaster gesteuert.
 
 > [!example|titel] HS3:
-> Original:
 > Sie erweitern in einem Korridor eine bestehende Wechselschaltung (Sch 3) um eine zusätzliche Schaltstelle. Die neue Schaltstelle wird mit einer Orientierungsleuchte ausgerüstet, um die Bedienung bei Dunkelheit zu erleichtern.
-> 
-> Geändert:
-> Sie erweitern in einem Korridor eine bestehende Wechselschaltung (Sch 3) mit einer Orientierungsleuchte, um die Bedienung bei Dunkelheit zu erleichtern.
-> 
-> - Absegnen der Anpassung der Handlung #todo
-> - --> originalhandlung nehmen
 
 > [!example|titel] HS4:
 > In einem Übungslabor einer Berufsschule sollen Sie an verschiedenen Verbrauchern, welche parallel geschaltet sind, Messungen und Berechnungen zu Spannung, Strom, Widerstand und Leistung durchführen.
 
 > [!example|titel] HS5:
 > Sie begleiten Ihren Monteur bei der Erstprüfung einer Parterrewohnung mit Sitzplatz. Ihr Monteur beauftragt Sie, die Sichtkontrolle zu übernehmen (Basisschutz, IP-Schutz, …).
-> Im anschliessenden Gespräch, in welchem Sie dem Monteur Ihre Befunde mitteilen, möchte er von Ihnen wissen, welche Schutzmassnahmen neben dem Basisschutz gegen den elektrischen Schlag gibt.
+> Im anschliessenden Gespräch, in welchem Sie dem Monteur Ihre Befunde mitteilen, möchte er von Ihnen wissen, welche Schutzmassnahmen neben dem Basisschutz es gegen den elektrischen Schlag gibt.
 
 ## Kenntnisse
 
 > [!info] 
 > - Kennt die Grundlagen des massstäblichen Rechnens und weiss, wie diese beim Einmessen von Installationsplänen angewendet werden. [[b3.2]]
-> - Kennt den grundlegenden Aufbau einer Schrittschaltung und Minuterie (G)<sup>2</sup> im Wirkschaltschema, Stromlaufschema, Apparateplan und Installationsplan (UP) mit den korrekten Symbolen und Bezeichnungen<sup>1</sup> [[a2.1]]
+> - Kennt den grundlegenden Aufbau einer Schrittschaltung und Minuterie im Wirkschaltschema, Stromlaufschema, Apparateplan und Installationsplan (UP) mit den korrekten Symbolen und Bezeichnungen<sup>1</sup> [[a2.1]]
 > - Kennt den grundlegenden Aufbau einer Sch 6 Schaltung im Wirkschaltschema und Installationsplan mit den korrekten Symbolen und Bezeichnungen (UP)<sup>1</sup> [[a2.1]]
 > - Sie wissen, wie die Lampenschaltung Sch 0 - 3, mit Orientierungs- und Kontrolllampen erweitert werden.<sup>1</sup> [[a2.1]]
 > - Sie kennen die mathematischen Zusammenhänge von Spannung, Strom und Widerstand in einer Parallelschaltung. [[a2.4]]
@@ -55,5 +48,5 @@ leistungsziele:
 ## Hinweise
 
 > [!note]
-> - <sup>1</sup> Theoretische + praktische Umsetzung im Labor!
-> - <sup>2</sup> Grundlagen definieren #todo
+> - <sup>1</sup> Schaltungen auch praktisch im Labor umsetzen
+

@@ -17,7 +17,7 @@ leistungsziele:
 > Beim Arbeiten an einer Abzweigdose entsteht durch fehlerhaftes Verhalten eine Durchströmung. Er kann seine physiologische Reaktion beschreiben.
 
 > [!example|titel] HS2:
-> Sie beobachten wie ein Lernender eine Brandabschottung mit einer Eisenstange durchstösst. In Folge eines Stromschlages, verursacht durch ein verletztes Kabel, stürzt dieser von der Leiter. Sie sind vor Ort, sichern die Unfallstelle und leisten erste Hilfe.
+> Sie beobachten wie ein Lernender eine Brandabschottung mit einer Eisenstange durchstösst. Infolge eines Stromschlages, verursacht durch ein verletztes Kabel, stürzt dieser von der Leiter. Sie sind vor Ort, sichern die Unfallstelle und leisten erste Hilfe.
 
 > [!example|titel] HS3:
 > Der Lernende erstellt eine Schwachstrom-Installation (Sonnerie, UKV etc.). Er fragt sich, ist dies eine Schwach- oder Starkstrominstallation.

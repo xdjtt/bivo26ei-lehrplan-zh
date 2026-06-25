@@ -26,11 +26,10 @@ leistungsziele:
 > - Bedeutung der KT (kurzer Überblick)
 > - Theorie Cu: (Definition Kategorie und Link-Klasse)
 >   - Kabel Kabeltypen
->     - UKV (Z.B. S-FTP), Arten
+>     - UKV (z.B. S-FTP), Arten
 >     - U72 inkl. Farbcode bis 2 x 4
 >   - Dosen und Module (Kategorie)
 >     - Verbindungen (Patchkabel, Stecker, Klemmen)
->- Abklären was mit der Cu-Theorie gemeint ist #todo 
 
 > [!info|titel] Hausanschluss [[d4.1]] / [[d4.2]]
 > - Hausanschlussarten:
